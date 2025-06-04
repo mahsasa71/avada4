@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+
+@layer base {
+    .row{
+        @apply flex flex-wrap w-full
+    }
+}
+
+@layer components {
+    .btngreen{
+        @apply flex w-[150px] h-[50px] justify-center items-center bg-emerald-400 text-white rounded-[30px]
+    }
+
+
+            .dance{
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            text-transform: uppercase;
+            font-size: 5.9em;
+            text-align: center;
+     font-weight: bold;
+            width: 100%;
+            background-image: url(../images/flower.jpg);
+            background-size: cover;
+            color: transparent;
+            background-clip: text;
+            transition: 3s;
+            animation: anime1 ease-in-out 10s infinite alternate;
+        }
+/* .bg-custom-bg {
+  background-image: url('../images/pets_big.webp'), url('../images/pattern_bg.jpg');
+  background-size: contain, cover;
+  background-position: bottom center, center;
+  background-repeat: no-repeat, no-repeat;
+} */
+}
+
+
+    .mahsa {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        border-radius: 50%;
+        z-index: 999;
+
+        .circle {
+            width: 180px;
+            height: 180px;
+
+            &::before,
+            &::after {
+                content: '';
+                width: 175px;
+                height: 175px;
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                transition: 1s;
+                rotate: 10deg;
+            }
+
+            &::before {
+                background-color: gray;
+                border-radius: 30% 70% 35% 65% / 30% 36% 64% 70%;
+                z-index: -998;
+            }
+
+            &::after {
+                background-color: rgb(49, 49, 49);
+                border-radius: 64% 36% 61% 39% / 43% 36% 64% 57%;
+                z-index: -999;
+            }
+
+            >img {
+                width: 165px;
+                height: 165px;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: bottom;
+            }
+
+        }
+
+        &:hover {
+            >a {
+                >i {
+                    visibility: visible;
+                }
+            }
+
+            .circle {
+
+                &::before,
+                &::after {
+                    rotate: 45deg;
+                }
+            }
+        }
+
+        >a {
+            >i {
+                font-size: 28px;
+                color: black;
+                transition: .6s;
+                position: absolute;
+                visibility: hidden;
+
+                &:hover {
+                    color: #7e7e7e;
+                }
+            }
+
+            &:nth-of-type(1) {
+                >i {
+                    top: -5px;
+                    left: -30px;
+                }
+            }
+
+            &:nth-of-type(2) {
+                >i {
+                    top: 35px;
+                    left: -52px;
+                }
+            }
+
+            &:nth-of-type(3) {
+                >i {
+                    top: 85px;
+                    left: -52px;
+                }
+            }
+
+            &:nth-of-type(4) {
+                >i {
+                    top: 125px;
+                    left: -30px;
+                }
+            }
+        }
+    }
+
+@layer utilities {
+    .bt {
+        @apply border border-2 border-black
+    }
+
+}
+
+
+        @keyframes anime1{
+            50%{
+                background-position: -200px;
+            }
+            100%{
+                background-position:-100% -200px;
+
+            }
+        }
